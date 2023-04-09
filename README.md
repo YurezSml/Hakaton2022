@@ -16,82 +16,39 @@
 
 ## Структура датасета
 
-Index: 1116 entries, 9 5G 4  6. 120 герц to 10C\
-Data columns (total 36 columns):
+Int64Index: 12212868 entries, 0 to 12292587
+Data columns (total 9 columns):
 
-| # | Column | Non-Null Count | Dtype |
-|------|------|------|------|
-| 0  | discount       | 1116 non-null | int64   |
-| 1  | price          | 1116 non-null | int64   |
-| 2  | discount_price | 1116 non-null | int64   |
-| 3  | brand          | 1116 non-null | object |
-| 4  | feedbacks      | 1116 non-null | int64   |
-| 5  | rating         | 1116 non-null | int64   |
-| 6  | link           | 1116 non-null | object |
-| 7  | high_rating    | 1116 non-null | int64   |
-| 8  | memory_size    | 1116 non-null | int64   |
-| 9  | country        | 1116 non-null | object |
-| 10 | weight         | 923 non-null  | float64 |
-| 11 | width          | 809 non-null  | float64 |
-| 12 | height         | 826 non-null  | float64 |
-| 13 | thickness      | 739 non-null  | float64 |
-| 14 | screen_resol   | 1025 non-null | object |
-| 15 | screen_size_y  | 1065 non-null | float64 |
-| 16 | screen_type    | 968 non-null  | object |
-| 17 | MaxSDMemory    | 583 non-null  | float64 |
-| 18 | RAM            | 1116 non-null | float64 |
-| 19 | OperSystem     | 966 non-null  | object |
-| 20 | SIMType        | 980 non-null  | object |
-| 21 | Warranty       | 978 non-null  | float64 |
-| 22 | CPUType        | 998 non-null  | object |
-| 23 | CPUFreq        | 705 non-null  | object |
-| 24 | CPUCores       | 1112 non-null | float64 |
-| 25 | MainCameraMP   | 1116 non-null | int64   |
-| 26 | FrontCameraMP  | 1116 non-null | int64   |
-| 27 | SIMNumber      | 1100 non-null | float64 |
-| 28 | Wireless       | 1009 non-null | object |
-| 29 | CommunicStand  | 957 non-null  | object |
-| 30 | SatelliteNavig | 905 non-null  | object |
-| 31 | Battery        | 1116 non-null | int64   |
-| 32 | InterfaceType  | 1003 non-null | object |
-| 33 | resolution     | 1116 non-null | int64   |
-| 34 | proportion     | 1116 non-null | float64 |
-| 35 | sales_count    | 1116 non-null | int64 |
-
-dtypes: float64(11), int64(12), object(13)\
-memory usage: 322.6+ KB
+| # | Column | Dtype |
+|------|------|------|
+| 0  | common_id       | int64   |
+| 1  | event_date      | object  |
+| 2  | event_timestamp | int64   |
+| 3  | action_time     | int32   |
+| 4  | vacancy_id_     | int64   |
+| 5  | cookie_id_      | object  |
+| 6  | user_id         | object |
+| 7  | event_type      | object |
+| 8  | rating          | int64   |
+dtypes: int32(1), int64(4), object(4)\
+memory usage: 885.2+ MB
 
 ## Методы сбора и обработки данных
-Для сбора данных переиспользован и адаптирован под задачу команды python модуль для парсинга торговой площадки Wildberries, основанный на работе с API сайта, используя библиотеки requests, json, pandas.
-Данные, в виде каталога Wildberries, получены в json формате по url = 'https://www.wildberries.ru/webapi/menu/main-menu-ru-ru.json' и сохранены в файл.
-
-## Источники
-Данные с сайта https://www.wildberries.ru \
-Данные из статьи https://vk.com/@happython-parser-wildberries
+Данные предоставлены компанией
 
 ## Описание ноутбуков
 
-Ноутбуки разделены на три части: сбор данных, чистка и визуализация.
+Ноутбуки разделены на три части: работа с данными и моделирование.
 
-1. Два ноутбука-парсера с поэтапным сбором данных.
-2. Два ноутбука-обработчика с поэтапной аналитикой и чисткой.
-3. Ноутбук с визуализацией анализа на графиках.
+1. Ноутбук с поэтапной обработкой данных.
+2. Три ноутбука с наработками по модели с использованием подхода для рекомендательных систем(svd).
 
 Работа велась с помощью среды Jupyter Notebook.
 
 ## Структура репозитория
 
-    ├── data                             # промежуточные датасеты
-    │   ├── AdditionalCharacteristics.csv
-    │   ├── Dataset_final.csv
-    │   ├── Dataset_final_V2.csv
-    │   ├── Смартфоны_from_1000_to_200000.csv
-    │   ├── ProcessedDatasetMemory.csv
-    │   └── ProcessedDataset.csv
-    ├── DataAnalysisVisu.ipynb           # ноутбук с визуализацией
-    ├── DataProcessing.ipynb             # ноутбук с обработкой данных - часть 1
-    ├── DataProcessing_2.ipynb           # ноутбук с обработкой данных - часть 2
-    ├── Dataton_parser1.ipynb            # ноутбук с парсером данных - часть 1
-    ├── Dataton_parser2.ipynb            # ноутбук с парсером данных - часть 2
-    ├── Dataset_final_V4.csv             # финальный датасет
-    └── README.md
+    ├── DataProcessing.ipynb                        # работа с данными
+    ├── Model_RabotaRU.ipynb                        # моделирование
+    ├── SVD_model_top80.ipynb                       # моделирование
+    ├── baseline_model_with_precision5_v2.ipynb     # моделирование
+    └── README.md                                   #Документация по проекту
