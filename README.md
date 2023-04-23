@@ -30,6 +30,8 @@ Data columns (total 9 columns):
 | 6  | user_id         | object |
 | 7  | event_type      | object |
 | 8  | common_id_2     | object |
+
+
 dtypes: float64(1), int64(3), object(5) \
 memory usage: 937.9+ MB
 
