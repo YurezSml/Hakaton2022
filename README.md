@@ -16,7 +16,7 @@
 
 ## Структура датасета
 
-Int64Index: 12212868 entries, 0 to 12292587
+Int64Index: 12292588 entries, 15 to 12292575
 Data columns (total 9 columns):
 
 | # | Column | Dtype |
@@ -29,26 +29,28 @@ Data columns (total 9 columns):
 | 5  | cookie_id_      | object  |
 | 6  | user_id         | object |
 | 7  | event_type      | object |
-| 8  | rating          | int64   |
-dtypes: int32(1), int64(4), object(4)\
-memory usage: 885.2+ MB
+| 8  | common_id_2     | object |
+dtypes: float64(1), int64(3), object(5) \
+memory usage: 937.9+ MB
 
 ## Методы сбора и обработки данных
 Данные предоставлены компанией
 
 ## Описание ноутбуков
 
-Ноутбуки разделены на три части: работа с данными и моделирование.
+Ноутбуки разделены на три части: обработка данных, анализ данных и моделирование.
 
-1. Ноутбук с поэтапной обработкой данных.
-2. Три ноутбука с наработками по модели с использованием подхода для рекомендательных систем(svd).
+1. Поэтапная обработка данных.
+2. Поэтапный анализ данных.   
+3. Моделирование.
 
 Работа велась с помощью среды Jupyter Notebook.
 
 ## Структура репозитория
 
-    ├── DataProcessing.ipynb                        # работа с данными
-    ├── Model_RabotaRU.ipynb                        # моделирование
-    ├── SVD_model_top80.ipynb                       # моделирование
-    ├── baseline_model_with_precision5_v2.ipynb     # моделирование
-    └── README.md                                   #Документация по проекту
+    ├──Models
+    │  ├── ComplexModel_CommonID_RabotaRU.ipynb     # Моделирование (модель ALS)
+    │  └── ...Промежуточные модели                  # Промежуточные модели
+    ├── DataProcessing.ipynb                        # обработка данных
+    ├── DataAnalysis.ipynb                          # анализ данных
+    └── README.md                                   # документация по проекту
