@@ -50,9 +50,8 @@ memory usage: 937.9+ MB
 
 ## Структура репозитория
 
-    ├──Models
-    │  ├── ComplexModel_CommonID_RabotaRU.ipynb     # Моделирование (модель ALS)
-    │  └── ...Промежуточные модели                  # Промежуточные модели
+    ├──Models                                       # промежуточные модели
     ├── DataProcessing.ipynb                        # обработка данных
     ├── DataAnalysis.ipynb                          # анализ данных
+    ├── Model_IMPLICIT_with_0_6 rating.ipynb        # основная модель
     └── README.md                                   # документация по проекту
